@@ -1,10 +1,11 @@
 "use client"
-import { useTheme } from "next-themes"
-import { MagicCard } from "@/components/magicui/magic-card"
-import Marquee from "./magicui/marquee"
-import NumberTicker from "./magicui/number-ticker"
-import { FolderGit2, Forklift, GitFork, Star, User } from "lucide-react"
-import { Avatar, AvatarImage } from "./ui/avatar"
+
+import Marquee from "../magicui/marquee"
+import { FolderGit2, GitFork, Star, User } from "lucide-react"
+import { Avatar, AvatarImage } from "../ui/avatar"
+import { CardNumber } from "./CardNumber"
+import { CardLabel } from "./CardLabel"
+import { Card } from "./Card"
 
 type Props = {
   stargazers: number
@@ -70,38 +71,4 @@ export default function TrustedBy({
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-white dark:from-background"></div>
     </div>
   )
-}
-
-const Card = ({ children }: { children: React.ReactNode }) => {
-  const { resolvedTheme } = useTheme()
-
-  return (
-    <MagicCard
-      gradientColor={resolvedTheme === "dark" ? "#262626" : "#D9D9D955"}
-      className="flex min-w-[180px] cursor-pointer items-center justify-center shadow-xl md:min-w-[300px]"
-    >
-      <div className="flex h-full flex-col items-center justify-center gap-2 px-8 py-4 text-xl md:px-16">
-        {children}
-      </div>
-    </MagicCard>
-  )
-}
-
-const CardNumber = ({
-  children,
-  value,
-}: {
-  children: React.ReactNode
-  value: number
-}) => {
-  return (
-    <div className="mb-auto flex items-center gap-1 text-xl font-semibold md:text-4xl">
-      <NumberTicker value={value} />
-      {children}
-    </div>
-  )
-}
-
-const CardLabel = ({ children }: { children: React.ReactNode }) => {
-  return <div className="text-base md:text-xl">{children}</div>
 }

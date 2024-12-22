@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero"
 import { HeroParticles } from "@/components/HeroParticles"
 import BlurFade from "@/components/magicui/blur-fade"
-import TrustedBy from "@/components/TrustedBy"
+import TrustedBy from "@/components/TrustedBy/TrustedBy"
 import { getMyntenanceRepository } from "@/lib/github/api"
 import { getServerOctokit } from "@/lib/github/server"
 import { createClient } from "@/lib/supabase/server"
